@@ -1,0 +1,461 @@
+<!--
+<div *ngIf="mostraLogo == '1' "><div id="logo" class="bg-danger"> 
+  <div class="mx-auto p-4 " ><img  class="flot-center" src="../../assets/img/logo.png">
+  </div>
+  <div class="spinner-border text-light" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+</div>
+-->
+ 
+<nav class="navbar navbar-light bg-danger text-center sticky-top">
+  <span class="navbar-brand mb-0 h1 text-light ">Salgados para festa:</span> <span class="mb-0 h5 text-light ">R${{valorTotal}}.00</span> <img src="../../assets/compras/carrinhob.png">
+</nav>
+<div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-light btn-block text-center collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <span class="badge badge-primary">1</span> - Escolher modelos
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body ">
+        <div class="row-12" *ngFor="let model of modelo">
+        <div class="row mb-3 h5">
+        <div class="col-7 ">{{model.m}}</div><div class="col-5 text-right">
+           <i (click)="menorS(model.id)" class="fa fa-minus tamL" style="padding: 5px 7px 5px 7px;"></i>
+           {{model.q}}
+           <i (click)="maiorS(model.id)" class="fa fa-plus tamL" style="padding: 5px 7px 5px 7px;"></i>
+
+          </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn-light btn-block text-center collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <span class="badge badge-primary">2</span> - Refrigerantes
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <div class="col"><img src="../../assets/img/coca2l.jpg" style="width: 100px; height: 100px;"></div>
+              <div class="col">
+               
+                <table class="table table-borderless">
+                  <tbody >
+                    <tr class=" p-4">
+                      <td class=" p-1"><i (click)="maiorR(refri[0].id)" class="fa fa-arrow-up tamA"></i></td>
+                    </tr>
+                    <tr>
+                      <td class="  p-1" >0{{refri[0].q}}</td>
+                    </tr>
+                    <tr>
+                      <td class=" p-1"><i (click)="menorR(refri[0].id)" class="fa fa-arrow-down tamA"></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+
+              
+              </div>
+            </div>
+          </div>
+          <div class="col ">
+            <div class="row">
+              <div class="col"><img src="../../assets/img/guarana2l.jpg" style="width: 100px; height: 100px;"></div><div class="col">
+                <table class="table table-borderless">
+                  <tbody >
+                    <tr class=" p-4">
+                      <td class=" p-1"><i (click)="maiorR(refri[1].id)" class="fa fa-arrow-up tamA"></i></td>
+                    </tr>
+                    <tr>
+                      <td class="  p-1" >0{{refri[1].q}}</td>
+                    </tr>
+                    <tr>
+                      <td class=" p-1"><i (click)="menorR(refri[1].id)" class="fa fa-arrow-down tamA"></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <div class="col"><img src="../../assets/img/fantag15.jpg" style="width: 100px; height: 100px;"></div><div class="col">
+                <table class="table table-borderless">
+                  <tbody >
+                    <tr class=" p-4">
+                      <td class=" p-1"><i (click)="maiorR(refri[2].id)" class="fa fa-arrow-up tamA"></i></td>
+                    </tr>
+                    <tr>
+                      <td class="  p-1" >0{{refri[2].q}}</td>
+                    </tr>
+                    <tr>
+                      <td class=" p-1"><i (click)="menorR(refri[2].id)" class="fa fa-arrow-down tamA"></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col ">
+            <div class="row">
+              <div class="col"><img src="../../assets/img/fantal15.jpg" style="width: 100px; height: 100px;"></div><div class="col">
+                <table class="table table-borderless">
+                  <tbody >
+                    <tr class=" p-4">
+                      <td class=" p-1"><i (click)="maiorR(refri[3].id)" class="fa fa-arrow-up tamA"></i></td>
+                    </tr>
+                    <tr>
+                      <td class="  p-1" >0{{refri[3].q}}</td>
+                    </tr>
+                    <tr>
+                      <td class=" p-1"><i (click)="menorR(refri[3].id)" class="fa fa-arrow-down tamA"></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    </div>
+  </div>
+
+
+
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-light btn-block text-center collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <span class="badge badge-primary">3</span> - Finalizar Pedido
+        </button>
+      </h2>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        
+        <div class="form-row " >
+          <div class="col-12">
+            <label for="inputNome">Nome:</label>
+            <input type="text"
+              style="margin-bottom: 3px;"
+              class="form-control {{nomeEp ? '' : (nomeValido ? 'is-valid' : 'is-invalid')}}"
+              placeholder=""
+              style="margin-bottom: 3px;"
+              autocomplete="off"
+              minlength="1"
+              required
+              [value]="nome" 
+              #inputNome
+              (input)="fNome(inputNome.value)">
+          </div>
+          <div class="col-6">
+            <label for="inputData">Data:</label>
+            <input class="form-control {{ dataEp ? '' : (dataValido ? 'is-valid' : 'is-invalid')}} "
+              type="date"
+              autocomplete="off"
+              minlength="1"
+              required
+              (input)="fData($event)">
+          </div>
+          <div class="col-6"  *ngIf="ds == 1 " >
+            <div class="row">
+              <div class="col-6">
+                <label class="" for="inlineFormCustomSelect">{{ hora }} h :</label>
+                <select 
+                  class="custom-select mr-sm-2 {{ horaEp ? '' : (horaValido ? 'is-valid' : 'is-invalid')}}" 
+                  id="inlineFormCustomSelect"
+                  #selectHora
+                  (change)="fHora(selectHora.value)"
+                  >
+                  <option selected value="">00</option>
+                  <option value="10" selected="{{ hora == '10' ? 'selected' : ''}}">10 horas</option>
+                  <option value="11" selected="{{ hora == '11' ? 'selected' : ''}}">11 horas</option>
+                  <option value="12" selected="{{ hora == '12' ? 'selected' : ''}}">12 horas</option>
+                  <option value="13" selected="{{ hora == '13' ? 'selected' : ''}}">13 horas</option>
+                  <option value="14" selected="{{ hora == '14' ? 'selected' : ''}}">14 horas</option>
+                  <option value="15" selected="{{ hora == '15' ? 'selected' : ''}}">15 horas</option>
+                  <option value="16" selected="{{ hora == '16' ? 'selected' : ''}}">16 horas</option>
+                  <option value="17" selected="{{ hora == '17' ? 'selected' : ''}}">17 horas</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <label class="" for="inlineFormCustomSelect">{{ min }} min</label>
+                <select 
+                class="custom-select mr-sm-2 {{ minEp ? '' : (minValido ? 'is-valid' : 'is-invalid')}} " 
+                id="inlineFormCustomSelect"
+                #selectMin
+                (change)="fMin(selectMin.value)">
+                  <option selected value="">00</option>
+                  <option value="05" selected="{{ min == '05' ? 'selected' : ''}}">05 minutos </option>
+                  <option value="10" selected="{{ min == '10' ? 'selected' : ''}}">10 minutos</option>
+                  <option value="15" selected="{{ min == '15' ? 'selected' : ''}}">15 minutos</option>
+                  <option value="20" selected="{{ min == '20' ? 'selected' : ''}}">20 minutos</option>
+                  <option value="25" selected="{{ min == '25' ? 'selected' : ''}}">25 minutos</option>
+                  <option value="30" selected="{{ min == '30' ? 'selected' : ''}}">30 minutos</option>
+                  <option value="35" selected="{{ min == '35' ? 'selected' : ''}}">35 minutos</option>
+                  <option value="40" selected="{{ min == '40' ? 'selected' : ''}}">40 minutos</option>
+                  <option value="45" selected="{{ min == '45' ? 'selected' : ''}}">45 minutos</option>
+                  <option value="50" selected="{{ min == '50' ? 'selected' : ''}}">50 minutos</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-6"  *ngIf="diaSemana == '5' " >
+            <div class="row">
+              <div class="col-6">
+                <label class="" for="inlineFormCustomSelect">{{ hora }} h :</label>
+                <select 
+                  class="custom-select mr-sm-2 {{ horaEp ? '' : (horaValido ? 'is-valid' : 'is-invalid')}}" 
+                  id="inlineFormCustomSelect"
+                  #selectHora
+                  (change)="fHora(selectHora.value)">
+                  <option selected value="">Selecione a Hora...</option>
+                  <option value="13" selected="{{ hora == '13' ? 'selected' : ''}}">13 horas</option>
+                  <option value="14" selected="{{ hora == '14' ? 'selected' : ''}}">14 horas</option>
+                  <option value="15" selected="{{ hora == '15' ? 'selected' : ''}}">15 horas</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <label class="" for="inlineFormCustomSelect">{{ min }} min</label>
+                <select 
+                class="custom-select mr-sm-2 {{ minEp ? '' : (minValido ? 'is-valid' : 'is-invalid')}} " 
+                id="inlineFormCustomSelect"
+                #selectMin
+                (change)="fMin(selectMin.value)">
+                  <option selected value="">Selecione os minutos...</option>
+                  <option value="05" selected="{{ min == '05' ? 'selected' : ''}}">05 minutos </option>
+                  <option value="10" selected="{{ min == '10' ? 'selected' : ''}}">10 minutos</option>
+                  <option value="15" selected="{{ min == '15' ? 'selected' : ''}}">15 minutos</option>
+                  <option value="20" selected="{{ min == '20' ? 'selected' : ''}}">20 minutos</option>
+                  <option value="25" selected="{{ min == '25' ? 'selected' : ''}}">25 minutos</option>
+                  <option value="30" selected="{{ min == '30' ? 'selected' : ''}}">30 minutos</option>
+                  <option value="35" selected="{{ min == '35' ? 'selected' : ''}}">35 minutos</option>
+                  <option value="40" selected="{{ min == '40' ? 'selected' : ''}}">40 minutos</option>
+                  <option value="45" selected="{{ min == '45' ? 'selected' : ''}}">45 minutos</option>
+                  <option value="50" selected="{{ min == '50' ? 'selected' : ''}}">50 minutos</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-6"  *ngIf="diaSemana == '' " >
+            <div class="row">
+              <div class="col-6">
+                <label class="" for="inlineFormCustomSelect">{{ hora }} h :</label>
+                <select 
+                  class="custom-select mr-sm-2 {{ horaEp ? '' : (horaValido ? 'is-valid' : 'is-invalid')}}" 
+                  id="inlineFormCustomSelect"
+                  #selectHora
+                  (change)="fHora(selectHora.value)"
+                  >
+                  <option selected value="">Escolha uma data...</option>
+
+                </select>
+              </div>
+              <div class="col-6">
+                <label class="" for="inlineFormCustomSelect">{{ min }} min</label>
+                <select 
+                class="custom-select mr-sm-2 {{ minEp ? '' : (minValido ? 'is-valid' : 'is-invalid')}} " 
+                id="inlineFormCustomSelect"
+                #selectMin
+                (change)="fMin(selectMin.value)">
+                  <option selected value="">Escolha uma data...</option>
+              
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-6"  *ngIf="diaSemana == '6' " ><br />
+            <label for="inputModalidade"> **Não trabalhamos no Domingo**</label>
+          </div>
+           <!-- <label for="inputHora">Hora:</label>
+            <input type="time" class="form-control" (input)="fHora($event)" id="appt" name="appt" min="09:00" max="18:00" required>
+          </div>-->
+         
+          <div class="col-12 mt-0" >
+            <label for="inputModalidade">Forma de pagamento:</label>
+          <select 
+            class="custom-select my-1 mr-sm-2 col-12 {{ payEp ? '' : (payValido ? 'is-valid' : 'is-invalid')}}" 
+            id="inlineFormCustomSelectPref"
+            autocomplete="off"
+              minlength="1"
+              required
+            #selectPay
+            (input)="fPay(selectPay.value)">
+            <option selected value="">Pagamento...</option>
+            <option value="Cartão" selected="{{ pay == 'Cartão' ? 'selected' : ''}}" >Cartão</option>
+            <option value="Dinheiro" selected="{{ pay == 'Dinheiro' ? 'selected' : ''}}" >Dinheiro</option>
+          </select>
+        </div>
+        
+          <div class="col-12 mt-0" >
+            <label for="inputModalidade">Modalidade de entrega:</label>
+            <select 
+            class="custom-select my-1 mr-sm-2 col-12 {{ tipoEp ? '' : (tipoValido ? 'is-valid' : 'is-invalid')}}" 
+            id="inlineFormCustomSelectPref"
+            
+            #selectTipo
+            (input)="fSelect(selectTipo.value)">
+            <option selected value="">Modalidade de entrega...</option>
+            <option value="Retirar pedido no local" selected="{{ tipo == 'Retirar pedido no local' ? 'selected' : ''}}" >Retirar pedido no local</option>
+            <option value="Entregar pedido" selected="{{ tipo == 'Entregar pedido' ? 'selected' : ''}}" >Entregar pedido</option>
+          </select>
+        </div>
+        <div *ngIf="tipo == 'Retirar pedido no local' ">
+          <div class="form-row " >
+          <div class="col-12 mt-0" >
+            <label for="inputModalidade">Unidade:</label>
+          <select 
+            class="custom-select my-1 mr-sm-2 col-12 {{ unidadeEp ? '' : (unidadeValido ? 'is-valid' : 'is-invalid')}}" 
+            id="inlineFormCustomSelectPref"
+            autocomplete="off"
+            minlength="1"
+            required
+            #selectUnidade
+            (input)="fUnidade(selectUnidade.value)">
+            <option selected value="">Escolher unidade de Retirada...</option>
+            <option value="Rua:  Manoel Francisco Mello 469, vila São Sebastião" selected="{{ pay == 'Rua:  Manoel Francisco Mello 469, vila São Sebastião' ? 'selected' : ''}}" >Rua:  Manoel Francisco Mello 469, vila São Sebastião</option>
+            <option value="Rua: São Paulo 1306, vila Aparecida" selected="{{ pay == 'Rua: São Paulo 1306, vila Aparecida' ? 'selected' : ''}}" >Rua: São Paulo 1306, vila Aparecida</option>
+          </select>
+        </div></div></div>
+        
+        </div>
+        
+
+
+        <div *ngIf="tipo ==  'Entregar pedido' ">
+          <fieldset  class="{{visivel}}" > 
+            <div class="form-row "  >
+              <div *ngIf="pay == 'Dinheiro'" class="form-row ">
+              <div class="col-8 mb-2 mt-1" style="padding-top: 2px;" >
+                <select  
+                  class="custom-select my-1 mr-sm-2 col-12 {{ trocoSNEp ? '' : (trocoSNValido ? 'is-valid' : 'is-invalid')}}" 
+                  id="inlineFormCustomSelectPref"
+                  #selectTrocoSN
+                  (input)="fTrocoSN(selectTrocoSN.value)">
+                  <option selected value="">Vai Precisar de troco? </option>
+                  <option value="Sim" selected="{{ trocoSN == 'Sim' ? 'selected' : ''}}" >Sim</option>
+                  <option value="Não" selected="{{ trocoSN == 'Não' ? 'selected' : ''}}" >Não</option>
+                </select>
+              </div>
+              <div class="col-4  mb-2 mt-1" *ngIf="trocoSN == 'Sim'">
+                <input type="text"
+                class="form-control {{ trocoEp ? '' : (trocoValido ? 'is-valid' : 'is-invalid')}}"
+                placeholder="10,00"
+                style="margin-bottom: 0px;"
+                autocomplete="off"
+                minlength="1"
+                required
+                [value]="troco"
+                #selectTroco
+                (input)="fTroco(selectTroco.value)">
+              </div>
+              <div class="col-4  mb-2 mt-1" *ngIf="trocoSN == 'Não' || trocoSN == '' ">
+                <input disabled type="text"
+                class="form-control {{ trocoEp ? '' : (trocoValido ? 'is-valid' : 'is-invalid')}}"
+                placeholder="R$:"
+                style="margin-bottom: -3px;"
+                autocomplete="off"
+                minlength="1"
+                required
+                [value]="troco"
+                #selectTroco
+                (input)="fTroco(selectTroco.value)">
+              </div>
+            </div>
+            <div class="col-8 mb-2 mt-1" >
+              <label for="inputRua">Rua:</label>
+              <input type="text"
+              style="margin-bottom: 3px;"
+              class="form-control {{ ruaEp ? '' : (ruaValido ? 'is-valid' : 'is-invalid')}}"
+              placeholder=""
+              style="margin-bottom: 3px;"
+              autocomplete="off"
+              minlength="1"
+              required
+              [value]="rua"
+              #selectRua
+              (input)="fRua(selectRua.value)">
+
+              
+            </div>
+            <div class="col-4 mb-2 mt-1" >
+              <label for="inputRua">Comple:</label>
+              <input type="text" 
+                class="form-control  {{ complementoEp ? '' : (complementoValido ? 'is-valid' : 'is-invalid')}}"
+                autocomplete="off"
+              minlength="1"
+              required
+                [value]="complemento"
+                placeholder=""
+                #selectComplemento
+                (input)="fComple(selectComplemento.value)"
+                 >
+            </div>
+            
+            <div class="col-8 ">
+              <label for="inputBairro">Bairro:</label>
+              <input type="text"
+              class="form-control {{ bairroEp ? '' : (bairroValido ? 'is-valid' : 'is-invalid')}}"
+              autocomplete="off"
+              minlength="1"
+              required
+               [value]="bairro" 
+               #selectBairro
+              (input)="fBairro(selectBairro.value)"
+               >
+            </div>
+            <div class="col-4 mb-2">
+              <label for="inputN">Nº:</label>
+              <input type="text"
+               class="form-control {{ numEp ? '' : (numValido ? 'is-valid' : 'is-invalid')}}" 
+               autocomplete="off"
+              minlength="1"
+              required
+               [value]="num" 
+               #selectNum
+               (input)="fNum(selectNum.value)">
+            </div>         
+          </div>
+          </fieldset>
+        </div>
+        
+
+
+
+
+          <button type="button" (click)="whatsap()"  class="btn {{corBotao}} btn-lg btn-block" [disabled]='formEstado'> Confirmar pedido</button>
+          
+            <span class="badge badge-light align-text d-flex justify-content-center"  >O pedido será redirecionado para o WhatsApp</span> 
+        
+        </div>
+    </div>
+
+
+  <div class="mx-auto p-4">
+    
+    
+    <button type="button" (click)="cardapio()"  class="btn btn-sm btn-danger btn-block"> Voltar</button>
+    <img  class="flot-center" src="../../assets/img/logo.png"></div>
+</div>
+
+
